@@ -34,22 +34,22 @@ jobs:
            docker push muthiah123456789/simple-go-server
       shell: bash
     
-    - name: Docker push
-      run: make docker-push
+#     - name: Docker push
+#       run: make docker-push
       
-    - name: Login to DockerHub
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+#     - name: Login to DockerHub
+#       uses: docker/login-action@v1
+#       with:
+#         username: ${{ secrets.DOCKERHUB_USERNAME }}
+#         password: ${{ secrets.DOCKERHUB_TOKEN }}
         
-    - name: Build and push image
-      uses: docker/build-push-action@v2
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
-        repository: muthiah123456789/goapp
-        context: ./rootfs
-        push: true
-        tags: goserver:latest
-        uild-args: COMMIT=${{ needs.setup.outputs.commit }}
+#     - name: Build and push image
+#       uses: docker/build-push-action@v2
+#       with:
+#         username: ${{ secrets.DOCKERHUB_USERNAME }}
+#         password: ${{ secrets.DOCKERHUB_TOKEN }}
+#         repository: muthiah123456789/goapp
+#         context: ./rootfs
+#         push: true
+#         tags: goserver:latest
+#         uild-args: COMMIT=${{ needs.setup.outputs.commit }}
