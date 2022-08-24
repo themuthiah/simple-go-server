@@ -32,6 +32,5 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        file: ${{ github.workspace }}/rootfs/Dockerfile
         tags: goserver:latest
         uild-args: COMMIT=${{ needs.setup.outputs.commit }}
