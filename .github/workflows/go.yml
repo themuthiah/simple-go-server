@@ -18,7 +18,7 @@ jobs:
       with:
         go-version: 1.18
     - name: Build
-      run: go build main.go
+      run: go build ${{ github.workspace }}/main.go
 
     - name: Test
-      run: go test main.go
+      run: go test ${{ github.workspace }}/main.go
