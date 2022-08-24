@@ -35,6 +35,7 @@ jobs:
     - name: Build and push image
       uses: docker/build-push-action@v2
       with:
+        context: ./rootfs
         push: true
         tags: goserver:latest
         uild-args: COMMIT=${{ needs.setup.outputs.commit }}
