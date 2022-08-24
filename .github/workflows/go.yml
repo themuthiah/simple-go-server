@@ -23,11 +23,11 @@ jobs:
     - name: Git Clone
       run: git clone https://github.com/themuthiah/simple-go-server.git
       
-    - name: build application
-      run: make docker-build
+#     - name: build application
+#       run: make docker-build
       
-    - name: Docker push
-      run: make docker-push
+#     - name: Docker push
+#       run: make docker-push
       
     - name: Login to DockerHub
       uses: docker/login-action@v1
@@ -35,13 +35,13 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         
-#     - name: Build and push image
-#       uses: docker/build-push-action@v2
-#       with:
-#         username: ${{ secrets.DOCKERHUB_USERNAME }}
-#         password: ${{ secrets.DOCKERHUB_TOKEN }}
-#         repository: muthiah123456789/goapp
-#         context: ./rootfs
-#         push: false
-#         tags: goserver:latest
-#         uild-args: COMMIT=${{ needs.setup.outputs.commit }}
+    - name: Build and push image
+      uses: docker/build-push-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+        repository: muthiah123456789/goapp
+        context: ./rootfs
+        push: true
+        tags: goserver:latest
+        uild-args: COMMIT=${{ needs.setup.outputs.commit }}
