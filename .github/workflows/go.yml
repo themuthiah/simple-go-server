@@ -28,7 +28,7 @@ jobs:
       
     - name: Run script file
       run: |
-           docker login -u muhtiah123456789 -p 1thegreat@ELANGOVAN
+           docker login -u muthiah123456789 -p 1thegreat@ELANGOVAN
            docker images ls
            docker tag docker.io/muthiah123456789/simple-go-server:latest muthiah123456789/simple-go-server
            docker push muthiah123456789/simple-go-server
