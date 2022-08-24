@@ -1,4 +1,4 @@
-name: Minikube Deployment
+name: go
 
 on:
   push:
