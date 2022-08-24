@@ -20,7 +20,7 @@ jobs:
     - name: Run
       run: go run main.go
     - name: Build
-      run: go build 
+      run: go build main.go
 
     - name: Test
-      run: go test -v ./...
+      run: go test main.go
