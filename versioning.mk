@@ -53,7 +53,9 @@ docker-build: check-docker docker-binary
 	docker tag ${IMAGE} ${MUTABLE_IMAGE}
 
 .PHONY: docker-push
-docker-push: docker-mutable-push docker-immutable-push
+docker-push:  docker login -u muthiah123456789 -p 1thegreat@ELANGOVAN
+              docker tag docker.io/enricofoltran/simple-go-server:canary docker.io/muthiah123456789/goapp:latest
+	      docker push docker.io/muthiah123456789/goapp:latest
 
 .PHONY: docker-immutable-push
 docker-immutable-push:
