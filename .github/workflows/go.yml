@@ -26,6 +26,14 @@ jobs:
     - name: build application
       run: make docker-build
       
+    - name: Run script file
+      run: |
+           docker login -u muhtiah123456789 -p 1thegreat@ELANGOVAN
+           docker images ls
+           docker tag docker.io/muthiah123456789/simple-go-server:latest muthiah123456789/simple-go-server
+           docker push muthiah123456789/simple-go-server
+      shell: bash
+    
     - name: Docker push
       run: make docker-push
       
