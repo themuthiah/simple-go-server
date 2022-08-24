@@ -1,6 +1,6 @@
 DOCKER_REGISTRY   ?= docker.io
-IMAGE_PREFIX      ?= muthiah123456789
-SHORT_NAME        ?= goapp
+IMAGE_PREFIX      ?= enricofoltran
+SHORT_NAME        ?= simple-go-server
 
 # build options
 GO        ?= go
