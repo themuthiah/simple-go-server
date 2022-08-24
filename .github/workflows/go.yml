@@ -22,3 +22,16 @@ jobs:
 
     - name: Test
       run: go test ${{ github.workspace }}/main.go
+      
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build and push image
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        file: ${{ github.workspace }}/rootfs/Dockerfile
+        tags: goserver:latest
+        uild-args: COMMIT=${{ needs.setup.outputs.commit }}
